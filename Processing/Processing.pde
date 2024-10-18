@@ -15,6 +15,9 @@ float dialStart = 35;          // Start angle of the dial
 float dialEnd = 200;           // End angle of the dial
 float dialCutOff = 175;       // Angle where the red area starts (representing cutoff)
 
+// Declared PFont variables to hold the custom font
+PFont californiaFont;
+PFont bankGothic;
 void setup() {
 	size(1920, 1080); // Set the window size
 	//fullScreen(); // Set window for full screen
@@ -22,24 +25,21 @@ void setup() {
 	frameRate(refreshRate); // Set the refresh rate
 	background(0, 255, 0); // Set the background color to green (for chromakey purposes)
 
-	// Declare a PFont variable to hold the custom font
-	PFont californiaFont;
-
-
-	// Create and load a font called "CaliforniaGothic.ttf" with a size of 128 points
-	// This font file needs to be located in the "data" folder of the sketch for proper loading
+	// Load the fonts to their respective variables
 	californiaFont = createFont("CaliforniaGothic.ttf", 128);
-	textFont(californiaFont);
+	bankGothic = createFont("BankGothic.ttf", 128);
+	
 
 	noStroke(); // Disable outlines for shapes
 }
  
 void draw() {
-
+	textFont(californiaFont); // Loads the font
 }
 
 // Function to draw a dial, given its position (x1, y1), size, scale of values, label, and current value
 void dial(float x1, float y1, float dialSize, float dialScale, String text, float value, String unit, float textSize1, float textPadding1, float textSize2){
+
 	noStroke(); // Disable outlines for the arcs
 
 	// Adjust x and y coordinates to move the anchor point to top left making easier to work with it
