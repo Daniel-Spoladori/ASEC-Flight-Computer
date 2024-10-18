@@ -21,14 +21,15 @@ void setup() {
 
 	frameRate(refreshRate); // Set the refresh rate
 	background(0, 255, 0); // Set the background color to green (for chromakey purposes)
-	
+
 	// Declare a PFont variable to hold the custom font
 	PFont californiaFont;
 
+
 	// Create and load a font called "CaliforniaGothic.ttf" with a size of 128 points
 	// This font file needs to be located in the "data" folder of the sketch for proper loading
-	californiaFont = createFont("CaliforniaGothic.ttf", 256);
-  textFont(californiaFont);
+	californiaFont = createFont("CaliforniaGothic.ttf", 128);
+	textFont(californiaFont);
 
 	noStroke(); // Disable outlines for shapes
 }
@@ -66,17 +67,17 @@ void dial(float x1, float y1, float dialSize, float dialScale, String text, floa
 
 
 	/* Draw the red part of the dial starting from the cutoff point (dialCutOff) to the end of the dial
-		This area represents values beyond the display scale */
+	This area represents values beyond the display scale */
 	fill(150, 70, 70); // Set fill color to red (cutoff zone)
 	arc(x1, y1, dialSize, dialSize, radians(-270 + dialCutOff), radians(-270 + dialEnd), PIE);
 
 
 	/* Draw the red used part of the dial starting from the cutoff point (dialCutOff) to the corresponding speed
-		This area represents values beyond the display scale */
+	This area represents values beyond the display scale */
 	if (angle > dialCutOff) {
 		fill(255, 0, 0); // Set fill color to red (cutoff used zone)
 		arc(x1, y1, dialSize, dialSize, radians(-270 + dialCutOff), radians(-270 + angle), PIE);
-		
+
 	}
 
 
@@ -91,7 +92,7 @@ void dial(float x1, float y1, float dialSize, float dialScale, String text, floa
 
 	fill(230, 230, 255); // Set the fill color for the text (light blue color)
 
-	
+
 	textAlign(CENTER, CENTER); // Align the text horizontally and vertically to the center
 	textSize(textSize1); // Set the text size
 	text(text, x1, y1 - textPadding1 / 2); // Draw the first text (dial type) with a small padding adjustment
@@ -99,16 +100,36 @@ void dial(float x1, float y1, float dialSize, float dialScale, String text, floa
 	textSize(textSize2); // Set the text size
 
 	/* Draw the second text (value + unit) with a small padding adjustment
-	   The value is converted to an integer (rounded), concatenated with the unit, and then displayed */
+		The value is converted to an integer (rounded), concatenated with the unit, and then displayed */
 	text(str(int(value)) + unit, x1, y1 + textPadding1 / 2);
 }
 
-void bars(float x1, float y1, float x2, float y2, float dialScale, String text, float value, String unit, float textSize1, float textSize2, float corner, boolean cutoff){
-	noStroke(); // Disable outlines for the arcs
+void bars(float x1, float y1, float x2, float y2, float barScale, String text, float value, float textSize1, float corner, float barCorner){
 
+	noStroke();  // Disable outlines for the bar rectangles
+
+	// Adjust x2 and y2 to represent with cordinates and not scale
 	x2 = x2 - x1;
 	y2 = y2 - y1;
 
-	
-	rect(x1, y1, x2, y2, corner);
+	// Draw the background bar (gray-blue)
+	fill(152, 172, 195);  // Set fill color to gray-blue
+	rect(x1, y1, x2, y2, corner);  // Draw the background rectangle with specified corner rounding
+
+	// Map the current value (value) to the width of the bar (x1 to x2)
+	float angle = map(value, 0, barScale, x1, x2);
+
+	// Ensure that the mapped value doesn't exceed the maximum scale (cutoff point)
+	if (angle >= barScale) {
+		angle = barScale;
+	}
+
+	// Draw the inner bar representing the actual value (light white-blue)
+	fill(230, 230, 255);  // Set fill color to light white-blue
+	rect(x1, y1, angle, y2, corner, barCorner, barCorner, corner);  // Draw the value bar
+
+	// Draw the label text to the left of the bar
+	textAlign(RIGHT);  // Align the text to the right of the x position
+	textSize(textSize1);  // Set the text size for the label
+	text(text, x1 - 10, y1 + textSize1 / 1.9);  // Display the text at the specified position with some vertical adjustment
 }
