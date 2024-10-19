@@ -54,9 +54,11 @@ void draw() {
 	bars(500, resolutionY - 90, resolutionX / 2.3, resolutionY - 100, 100, "Lox", 45, 28, 10, 10);
 
 	textFont(californiaFont); // Loads the California Gothic font
-	textSize(70); // Set text size
 	textAlign(CENTER,BOTTOM); // Center the text allign
+	
+	textSize(70); // Set text size
 	text("ASEC", resolutionX / 2, resolutionY - 100); // Display our program
+	
 	textSize(40); // Set text size
 	text("GATC™", resolutionX / 2, resolutionY - 40); // Display our company name
 
@@ -71,6 +73,7 @@ void draw() {
 	textAlign(CENTER,BOTTOM); // Center the text allign
 	textFont(californiaFont); // Load California Gothic font
 	textSize(30); // Set text size
+	
 	// Display the time in the format "T: +HH:MM:SS"
 	text(("T: " + format + timeFormat(time, false)), resolutionX / 2, resolutionY - 180);
 }
