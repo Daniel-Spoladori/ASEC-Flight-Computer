@@ -76,6 +76,19 @@ void draw() {
 	
 	// Display the time in the format "T: +HH:MM:SS"
 	text(("T: " + format + timeFormat(time, false)), resolutionX / 2, resolutionY - 180);
+
+
+	textAlign(LEFT,BOTTOM); // Center the text allign
+	textFont(californiaFont); // Load California Gothic font
+	textSize(28); // Set text size
+
+	String phase = "Maximum Aerodinamic Pressure";
+	text("Phase: " + phase, resolutionX / 1.75, resolutionY - 180);
+	text(("Stage nº: " + str(2)), resolutionX / 1.75, resolutionY - 145);
+	text(("Acceleration: " + str(1.31) + "G"), resolutionX / 1.75, resolutionY - 110);
+	text(("Engine TWR: " + str(1.25)), resolutionX / 1.75, resolutionY - 75);
+	text(("Throttle %: " + str(1 * 100)), resolutionX / 1.75, resolutionY - 40);
+
 }
 
 // Function to draw a dial
@@ -146,7 +159,7 @@ void bars(float x1, float y1, float x2, float y2, float barScale, String text, f
 	y2 = y2 - y1; // Calculate height based on coordinates
 
 	// Draw the background bar (gray-blue)
-	fill(152, 172, 195);  // Set fill color to gray-blue
+	fill(102, 122, 145);  // Set fill color to gray-blue
 	rect(x1, y1, x2, y2, corner);  // Draw the background rectangle
 
 	// Map the current value (value) to the width of the bar (x1 to x2)
