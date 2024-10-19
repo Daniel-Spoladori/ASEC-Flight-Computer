@@ -37,7 +37,7 @@ void setup() {
  
 void draw() {
 
-	int time = -1; // Initialize time variable
+	int time = -60; // Initialize time variable
 	fill(0, 255, 0); // Set fill color to green (matches the background)
 	rect(0, 0, resolutionX, resolutionY); // Clear entire window
 
