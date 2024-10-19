@@ -37,6 +37,8 @@ void setup() {
  
 void draw() {
 
+	//Bad code here (my goal here was speed so i didnt stopped for make it more human readable)
+
 	int time = -60; // Initialize time variable
 	fill(0, 255, 0); // Set fill color to green (matches the background)
 	rect(0, 0, resolutionX, resolutionY); // Clear entire window
@@ -82,7 +84,7 @@ void draw() {
 	textFont(californiaFont); // Load California Gothic font
 	textSize(28); // Set text size
 
-	String phase = "Maximum Aerodinamic Pressure";
+	String phase = "Maximum Aerodinamic Pressure (MAX Q)";
 	text("Phase: " + phase, resolutionX / 1.75, resolutionY - 180);
 	text(("Stage nº: " + str(2)), resolutionX / 1.75, resolutionY - 145);
 	text(("Acceleration: " + str(1.31) + "G"), resolutionX / 1.75, resolutionY - 110);
