@@ -1,7 +1,7 @@
 OBSERVATION FOR THIS FLIGHT COMPUTER WORK MOVE "main.ks" to boot folder of kerbal operating system files should looks like:
 kspFolder\Ships\Script\boot\
 *main.ks
-*ASECFC\
+*ASECFC\(all remaining files should go here including this readme file)
 ...
 
 
