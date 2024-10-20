@@ -1,4 +1,16 @@
+OBSERVATION FOR THIS FLIGHT COMPUTER WORK MOVE "main.ks" to boot folder of kerbal operating system
+
 credits
+
+Mods:
+Kerbal Operating System (KOS)
+KerbalSimplit
+
+Programs used:
+OBS
+Processing
+Visual Studio Code
+Github
 
 Fonts:
 California Gothic: https://www.mattlag.com/californiagothic/ acessed: 18/10/2024
