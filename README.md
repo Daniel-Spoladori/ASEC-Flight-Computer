@@ -4,7 +4,7 @@ credits
 
 Mods:
 Kerbal Operating System (KOS)
-KerbalSimplit
+KerbalSimpit
 
 Programs used:
 OBS
