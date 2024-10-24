@@ -1,11 +1,12 @@
-Just extract the ASECFC SUB folder to KSPDIR\Ships\Script\boot\
+Extract the ASECFC SUB folder to KSPDIR\Ships\Script\boot\
 and the asec.ks to KSPDIR\Ships\Script\boot\
 the remaining files you can delete if you want
 
+----------------------------------------------------------
 
 credits
 
-Mods:
+Mods needed:
 Kerbal Operating System (KOS)
 KerbalSimpit
 
@@ -25,3 +26,7 @@ ChatGPT 4 (THX YOU SAVED MY UNCOMMENTED MESS)
 
 Programming:
 Daniel Spoladori / Gato100Mal
+
+Github Collaborators:
+Daniel-Spoladori (owner)
+ViniciusKobs (invited)
