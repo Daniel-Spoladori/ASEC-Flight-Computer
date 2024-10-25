@@ -1,6 +1,4 @@
-Extract the ASECFC SUB folder to KSPDIR\Ships\Script\boot\
-and the asec.ks to KSPDIR\Ships\Script\boot\
-the remaining files you can delete if you want
+Extract to *KSPDIRECTORY*\Ships\Script\boot\
 
 ----------------------------------------------------------
 
